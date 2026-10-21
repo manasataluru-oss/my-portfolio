@@ -1,19 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manasa's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manasa Taluru | Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#fff7fb;color:#49313f;line-height:1.7}
+header{background:#f7c6dc;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+header h2{color:#853b65}
+nav a{color:#66314f;text-decoration:none;margin:0 9px;font-weight:bold}
+.hero{text-align:center;padding:85px 20px;background:linear-gradient(135deg,#ffe4ef,#f4b8d2)}
+.hero h1{font-size:clamp(32px,5vw,52px);color:#873b65}
+.hero h3{margin:12px;color:#9b527b}
+.hero p{margin:15px}
+.btn{display:inline-block;background:#a84478;color:white;padding:11px 24px;border-radius:25px;text-decoration:none;margin-top:14px}
+section{padding:55px 8%;text-align:center}
+section h2{color:#a84478;margin-bottom:20px;font-size:29px}
+.card{background:white;padding:24px;border-radius:18px;box-shadow:0 5px 20px #eacbd9;margin:12px;flex:1;min-width:220px}
+.cards{display:flex;justify-content:center;flex-wrap:wrap;gap:15px}
+.skills span{display:inline-block;background:#f8d5e5;padding:10px 18px;border-radius:20px;margin:7px}
+footer{background:#f7c6dc;text-align:center;padding:22px}
+a{overflow-wrap:anywhere}
+</style>
 </head>
 <body>
-    <h1>Hello, I'm Manasa Taluru!</h1>
-    <h2>CSE - AI & ML Student</h2>
-    <p>Welcome to my personal portfolio.</p>
-    <h2>About Me</h2>
-    <p>I am a student at Mohan Babu University.</p>
-    <h2>My Skills</h2>
-    <p>Java | SQL | DSA</p>
-    <h2>My Goal</h2>
-    <p>To build a successful career in technology.</p>
+<header>
+<h2>🌸 Manasa's Portfolio</h2>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Hello, I'm Manasa Taluru! 💗</h1>
+<h3>CSE – AI & ML Student</h3>
+<p>Aspiring developer | Lifelong learner | Future tech professional</p>
+<p>Welcome to my little corner of the digital world.</p>
+<a class="btn" href="#about">Explore My Portfolio</a>
+</div>
+
+<section id="about">
+<h2>🌷 About Me</h2>
+<div class="card">
+<p>I am a Computer Science student specializing in Artificial Intelligence and Machine Learning at Mohan Babu University.</p>
+<p>I enjoy learning technology, solving problems, and improving my programming skills.</p>
+<p>My goal is to build a successful career in technology.</p>
+</div>
+</section>
+
+<section id="skills">
+<h2>✨ My Skills</h2>
+<div class="skills">
+<span>Java</span><span>SQL</span><span>Data Structures</span>
+<span>Algorithms</span><span>Python Basics</span><span>Problem Solving</span>
+</div>
+</section>
+
+<section id="projects">
+<h2>🎀 My Projects</h2>
+<div class="cards">
+<div class="card">
+<h3>Student Result System</h3>
+<p>A beginner-friendly project to calculate total marks and percentage.</p>
+</div>
+<div class="card">
+<h3>Personal Portfolio</h3>
+<p>This website introduces my skills, learning journey, and career goals.</p>
+</div>
+<div class="card">
+<h3>Data Analytics Practice</h3>
+<p>Learning to understand data through statistics and visualizations.</p>
+</div>
+</div>
+</section>
+
+<section id="education">
+<h2>🎓 Education</h2>
+<div class="card">
+<h3>Mohan Babu University</h3>
+<p>B.Tech – CSE, Artificial Intelligence & Machine Learning</p>
+<p>CGPA: 7.93</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>💌 Contact Me</h2>
+<div class="card">
+<p>Thank you for visiting my portfolio!</p>
+<p>Connect with me on GitHub:</p>
+<a class="btn" href="https://github.com/manasataluru-oss" target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
+</div>
+</section>
+
+<footer>
+<p>Made with 💗 by Manasa Taluru | © 2026</p>
+</footer>
 </body>
 </html>
