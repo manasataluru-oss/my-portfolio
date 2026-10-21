@@ -1,103 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manasa Taluru | Portfolio</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#fff7fb;color:#49313f;line-height:1.7}
-header{background:#f7c6dc;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-header h2{color:#853b65}
-nav a{color:#66314f;text-decoration:none;margin:0 9px;font-weight:bold}
-.hero{text-align:center;padding:85px 20px;background:linear-gradient(135deg,#ffe4ef,#f4b8d2)}
-.hero h1{font-size:clamp(32px,5vw,52px);color:#873b65}
-.hero h3{margin:12px;color:#9b527b}
-.hero p{margin:15px}
-.btn{display:inline-block;background:#a84478;color:white;padding:11px 24px;border-radius:25px;text-decoration:none;margin-top:14px}
-section{padding:55px 8%;text-align:center}
-section h2{color:#a84478;margin-bottom:20px;font-size:29px}
-.card{background:white;padding:24px;border-radius:18px;box-shadow:0 5px 20px #eacbd9;margin:12px;flex:1;min-width:220px}
-.cards{display:flex;justify-content:center;flex-wrap:wrap;gap:15px}
-.skills span{display:inline-block;background:#f8d5e5;padding:10px 18px;border-radius:20px;margin:7px}
-footer{background:#f7c6dc;text-align:center;padding:22px}
-a{overflow-wrap:anywhere}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manasa Taluru — CSE AI & ML student, aspiring software developer and technology enthusiast.">
+  <title>Manasa Taluru | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #c65383;
+      --pink-light: #fbeaf1;
+      --ink: #28232a;
+      --muted: #77717b;
+      --white: #ffffff;
+      --line: #eee6eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: #fffafd;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,250,253,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo { font-weight: 700; font-size: 20px; }
+    .logo span { color: var(--pink); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--pink); }
+
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(ellipse at 90% 10%, #fbe5ef 0, transparent 38%),
+        #fffafd;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 { line-height: 1.2; }
+
+    h1 {
+      font: 700 clamp(42px, 6vw, 68px)/1.1 "Playfair Display", serif;
+      margin: 20px 0;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span { color: var(--pink); }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 16px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--pink);
+      transition: .2s;
+    }
+
+    .btn-primary { background: var(--pink); color: white; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-outline { color: var(--pink); }
+
+    .profile-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px #b75d8310;
+    }
+
+    .monogram {
+      height: 100px;
+      width: 100px;
+      border-radius: 28px;
+      background: var(--pink-light);
+      color: var(--pink);
+      display: grid;
+      place-items: center;
+      font: 700 42px "Playfair Display", serif;
+      margin-bottom: 24px;
+    }
+
+    .profile-card h2 { font-size: 22px; }
+    .profile-card p { font-size: 14px; margin-top: 8px; }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: var(--pink-light);
+      color: #984466;
+      padding: 6px 11px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    section { padding: 78px 0; }
+
+    .section-heading { margin-bottom: 32px; }
+
+    .section-heading h2 {
+      font: 700 clamp(30px, 4vw, 40px) "Playfair Display", serif;
+      margin-top: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 12px;
+      max-width: 650px;
+    }
+
+    .about-grid, .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 26px;
+      border-radius: 14px;
+    }
+
+    .panel h3 { font-size: 18px; margin-bottom: 12px; }
+    .panel p { color: var(--muted); font-size: 14px; }
+
+    .details {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+      font-size: 14px;
+    }
+
+    .details span { color: var(--muted); }
+
+    .soft-section { background: #fcf1f6; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 23px;
+      border-radius: 13px;
+    }
+
+    .skill .number {
+      color: var(--pink);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .skill h3 { margin: 10px 0; font-size: 18px; }
+    .skill p { color: var(--muted); font-size: 13px; }
+
+    .project-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .project-card h3 { margin-bottom: 10px; }
+    .project-card p { color: var(--muted); font-size: 14px; }
+    .project-card .tag-list { margin-bottom: 18px; }
+
+    .text-link {
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      border-left: 2px solid #f0ccdc;
+      padding-left: 24px;
+      margin-left: 6px;
+    }
+
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pink);
+      left: -30px;
+      top: 8px;
+    }
+
+    .timeline-item h3 { font-size: 17px; }
+    .timeline-item p { color: var(--muted); font-size: 14px; }
+    .date { color: var(--pink); font-size: 12px; font-weight: 700; }
+
+    .contact-box {
+      background: #30252e;
+      color: white;
+      padding: 42px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .contact-box p { color: #e1d4dd; margin-top: 10px; font-size: 14px; }
+    .contact-box .btn { background: white; color: #30252e; border-color: white; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 25px 0;
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 720px) {
+      .hero { padding: 65px 0; }
+      .hero-grid, .about-grid, .two-col { grid-template-columns: 1fr; }
+      .hero-grid { gap: 32px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-inner { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 13px; }
+      section { padding: 58px 0; }
+      .contact-box { padding: 27px; }
+    }
+
+    @media (max-width: 420px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-<h2>🌸 Manasa's Portfolio</h2>
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Manasa<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<div class="hero">
-<h1>Hello, I'm Manasa Taluru! 💗</h1>
-<h3>CSE – AI & ML Student</h3>
-<p>Aspiring developer | Lifelong learner | Future tech professional</p>
-<p>Welcome to my little corner of the digital world.</p>
-<a class="btn" href="#about">Explore My Portfolio</a>
-</div>
+  <main>
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Student Portfolio · 2026</div>
+          <h1>Hello, I'm<br><span>Manasa Taluru.</span></h1>
+          <p>
+            A Computer Science student specializing in Artificial Intelligence
+            and Machine Learning, passionate about programming, problem-solving,
+            and building useful digital experiences.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
+            <a class="btn btn-outline" href="#contact">Get In Touch</a>
+          </div>
+        </div>
 
-<section id="about">
-<h2>🌷 About Me</h2>
-<div class="card">
-<p>I am a Computer Science student specializing in Artificial Intelligence and Machine Learning at Mohan Babu University.</p>
-<p>I enjoy learning technology, solving problems, and improving my programming skills.</p>
-<p>My goal is to build a successful career in technology.</p>
-</div>
-</section>
+        <div class="profile-card">
+          <div class="monogram">MT</div>
+          <h2>Manasa Taluru</h2>
+          <p>CSE · Artificial Intelligence & Machine Learning</p>
+          <div class="tag-list">
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+            <span class="tag">DSA</span>
+            <span class="tag">Data Analytics</span>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<section id="skills">
-<h2>✨ My Skills</h2>
-<div class="skills">
-<span>Java</span><span>SQL</span><span>Data Structures</span>
-<span>Algorithms</span><span>Python Basics</span><span>Problem Solving</span>
-</div>
-</section>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">A little about me</div>
+          <h2>Driven by curiosity.<br>Focused on growth.</h2>
+        </div>
 
-<section id="projects">
-<h2>🎀 My Projects</h2>
-<div class="cards">
-<div class="card">
-<h3>Student Result System</h3>
-<p>A beginner-friendly project to calculate total marks and percentage.</p>
-</div>
-<div class="card">
-<h3>Personal Portfolio</h3>
-<p>This website introduces my skills, learning journey, and career goals.</p>
-</div>
-<div class="card">
-<h3>Data Analytics Practice</h3>
-<p>Learning to understand data through statistics and visualizations.</p>
-</div>
-</div>
-</section>
+        <div class="about-grid">
+          <div class="panel">
+            <h3>My Introduction</h3>
+            <p>
+              I'm Manasa, a B.Tech student at Mohan Babu University.
+              I'm developing my technical skills in Java, SQL, data structures,
+              and analytics. My goal is to become a skilled professional,
+              contribute to meaningful projects, and keep learning every day.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Quick Details</h3>
+            <ul class="details">
+              <li><span>Name:</span> Manasa Taluru</li>
+              <li><span>University:</span> Mohan Babu University</li>
+              <li><span>Degree:</span> B.Tech</li>
+              <li><span>Specialization:</span> CSE (AI & ML)</li>
+              <li><span>CGPA:</span> 7.93</li>
+              <li><span>Career Interest:</span> Software Development & Data Analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="education">
-<h2>🎓 Education</h2>
-<div class="card">
-<h3>Mohan Babu University</h3>
-<p>B.Tech – CSE, Artificial Intelligence & Machine Learning</p>
-<p>CGPA: 7.93</p>
-</div>
-</section>
+    <section class="soft-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What I'm learning</div>
+          <h2>Technical Skills</h2>
+          <p>Core skills I'm building through coursework and practice.</p>
+        </div>
 
-<section id="contact">
-<h2>💌 Contact Me</h2>
-<div class="card">
-<p>Thank you for visiting my portfolio!</p>
-<p>Connect with me on GitHub:</p>
-<a class="btn" href="https://github.com/manasataluru-oss" target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
-</div>
-</section>
+        <div class="skills-grid">
+          <div class="skill">
+            <div class="number">01 / PROGRAMMING</div>
+            <h3>Java</h3>
+            <p>Programming fundamentals, methods, loops and problem-solving.</p>
+          </div>
+          <div class="skill">
+            <div class="number">02 / DATABASES</div>
+            <h3>SQL</h3>
+            <p>Learning queries, data retrieval and relational databases.</p>
+          </div>
+          <div class="skill">
+            <div class="number">03 / PROBLEM SOLVING</div>
+            <h3>DSA</h3>
+            <p>Practising data structures, algorithms and complexity basics.</p>
+          </div>
+          <div class="skill">
+            <div class="number">04 / ANALYTICS</div>
+            <h3>Data Analytics</h3>
+            <p>Exploring data preparation, analysis and visualization.</p>
+          </div>
+          <div class="skill">
+            <div class="number">05 / WEB</div>
+            <h3>HTML & CSS</h3>
+            <p>Creating responsive web pages and personal projects.</p>
+          </div>
+          <div class="skill">
+            <div class="number">06 / TOOLS</div>
+            <h3>GitHub</h3>
+            <p>Publishing projects and learning version-control workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-<p>Made with 💗 by Manasa Taluru | © 2026</p>
-</footer>
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">My academic journey</div>
+          <h2>Education & Learning</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="date">CURRENT EDUCATION</div>
+            <h3>B.Tech — CSE (AI & ML)</h3>
+            <p>Mohan Babu University</p>
+            <p>CGPA: 7.93</p>
+          </div>
+          <div class="timeline-item">
+            <div class="date">CERTIFICATE / COURSE</div>
+            <h3>Google Cloud Data Analytics</h3>
+            <p>Add the exact program or certificate title and completion date here.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="date">ADDITIONAL LEARNING</div>
+            <h3>Coursera & L&T</h3>
+            <p>Add your completed course names and certificate links here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Things I've been building</div>
+          <h2>Featured Projects</h2>
+          <p>Showcase your own completed projects here. Replace the sample descriptions with your actual work.</p>
+        </div>
+
+        <div class="two-col">
+          <article class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive website to present my background, technical skills, education and projects.</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+            <a class="text-link" href="https://github.com/manasataluru-oss/my-portfolio" target="_blank" rel="noopener noreferrer">View Repository ↗</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Java Practice Projects</h3>
+            <p>A collection of Java exercises to practise programming fundamentals, arrays, loops and problem-solving.</p>
+            <div class="tag-list">
+              <span class="tag">Java</span>
+              <span class="tag">DSA</span>
+            </div>
+            <a class="text-link" href="https://github.com/manasataluru-oss" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">Let's connect</div>
+            <h2 style="font:700 32px 'Playfair Display'; margin-top:10px;">
+              Open to learning & opportunities.
+            </h2>
+            <p>Feel free to connect with me about projects, learning and collaboration.</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://github.com/manasataluru-oss" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <!-- Add your email below when ready -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Manasa Taluru · Designed with care.
+  </footer>
 </body>
 </html>
